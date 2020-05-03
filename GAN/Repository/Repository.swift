@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol RepositoryType { }
+protocol RepositoryType: CharactersRepository { }
 
 class Repository: RepositoryType {
     

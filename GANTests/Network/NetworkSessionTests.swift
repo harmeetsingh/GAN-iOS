@@ -56,7 +56,7 @@ class NetworkSessionTests: XCTestCase {
                 XCTAssertEqual(networkRequestError, NetworkRequestError.nilURL)
 
             default:
-                break
+                XCTFail()
             }
         }
     }
@@ -84,7 +84,7 @@ class NetworkSessionTests: XCTestCase {
                 expectation.fulfill()
 
             default:
-                break
+                XCTFail()
             }
         }
 
@@ -113,7 +113,7 @@ class NetworkSessionTests: XCTestCase {
                 expectation.fulfill()
 
             default:
-                break
+                XCTFail()
             }
         }
 
@@ -142,7 +142,7 @@ class NetworkSessionTests: XCTestCase {
                 expectation.fulfill()
 
             default:
-                break
+                XCTFail()
             }
         }
 
@@ -172,7 +172,7 @@ class NetworkSessionTests: XCTestCase {
                 XCTAssertEqual(decodedData as? String, "a string was decoded")
                 expectation.fulfill()
             default:
-                break
+                XCTFail()
             }
         }
 
@@ -198,7 +198,7 @@ class NetworkSessionTests: XCTestCase {
                 expectation.fulfill()
 
             default:
-                break
+                XCTFail()
             }
         }
 
@@ -227,7 +227,7 @@ class NetworkSessionTests: XCTestCase {
                 expectation.fulfill()
 
             default:
-                break
+                XCTFail()
             }
         }
 
@@ -256,7 +256,7 @@ class NetworkSessionTests: XCTestCase {
                 expectation.fulfill()
 
             default:
-                break
+                XCTFail()
             }
         }
 
@@ -289,7 +289,7 @@ class NetworkSessionTests: XCTestCase {
                 XCTAssertEqual(responseImage.pngData(), localImage?.pngData())
                 expectation.fulfill()
             default:
-                break
+                XCTFail()
             }
         }
 

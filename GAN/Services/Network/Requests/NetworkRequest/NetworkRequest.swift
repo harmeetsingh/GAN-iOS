@@ -43,8 +43,7 @@ extension NetworkRequest {
         }
 
         if let parameters = parameters {
-            urlRequest.httpBody = try JSONSerialization.data(withJSONObject: parameters,
-                                                             options: .prettyPrinted)
+            urlRequest.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
         }
 
         return urlRequest

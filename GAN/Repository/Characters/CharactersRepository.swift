@@ -7,3 +7,35 @@
 //
 
 import Foundation
+
+protocol CharactersRepository {
+    
+    func fetchCharacters(completion: @escaping (Result<[Character], Error>) -> Void)
+}
+
+extension Repository {
+
+    func fetchCharacters(completion: @escaping (Result<[Character], Error>) -> Void) {
+        
+        let request = CharactersNetworkRequest()
+        let responseDecoder = CharactersResponseDecoder()
+  
+        network.load(request: request, decoder: responseDecoder) { result in
+
+            switch result {
+
+            case .failure(let error):
+                completion(.failure(error))
+
+            case .success(let decodedData):
+
+                guard let clothingItems = decodedData as? [Character] else {
+                    completion(.failure(RepositoryError.unexpectedResponseType))
+                    return
+                }
+
+                completion(.success(clothingItems))
+            }
+        }
+    }
+}

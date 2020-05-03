@@ -15,6 +15,6 @@ struct CharactersNetworkRequest: NetworkRequest {
     let endpoint: String = "/api/characters"
     let query: String? = nil
     let method: NetworkRequestMethod = .get
-    let headers: [String : String]? = [String : String]()
-    let parameters: [String : AnyObject]? = [String : AnyObject]()
+    let headers: [String : String]? = nil
+    let parameters: [String : AnyObject]? = nil
 }
