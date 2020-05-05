@@ -1,0 +1,10 @@
+{
+  "commitish" : "1.4.5",
+  "iOS" : [
+    {
+      "name" : "Differ",
+      "hash" : "3486f79a432d090ef6338e74b6220106e04265780a89e0048a5fb0d7a2a5cb0b",
+      "swiftToolchainVersion" : "5.1 (swiftlang-1100.0.270.13 clang-1100.0.33.7)"
+    }
+  ]
+}
