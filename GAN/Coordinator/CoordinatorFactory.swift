@@ -26,6 +26,10 @@ class CoordinatorFactory: CoordinatorFactoryType {
     }
 
     func makeCharacters() -> CharactersCoordinatorType {
-        return CharactersCoordinator()
+        return CharactersCoordinator(repository: repository, imageRepository: repository, detailsCoordinator: makeDetails())
+    }
+    
+    private func makeDetails() -> CharacterDetailsCoordinatorType {
+        return CharacterDetailsCoordinator(repository: repository)
     }
 }

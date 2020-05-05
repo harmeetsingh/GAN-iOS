@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Character: Decodable {
+struct Character: Decodable, Equatable {
     
     // MARK: - Properties
     

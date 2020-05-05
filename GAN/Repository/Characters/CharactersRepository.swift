@@ -29,12 +29,12 @@ extension Repository {
 
             case .success(let decodedData):
 
-                guard let clothingItems = decodedData as? [Character] else {
+                guard let characters = decodedData as? [Character] else {
                     completion(.failure(RepositoryError.unexpectedResponseType))
                     return
                 }
 
-                completion(.success(clothingItems))
+                completion(.success(characters))
             }
         }
     }

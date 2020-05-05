@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Properties
 
     var window: UIWindow?
+    var coordinator: CharactersCoordinatorType?
     
     // MARK: - Lifecycle
 
@@ -30,8 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let network = NetworkSession(session: URLSession.shared, domain: "https://breakingbadapi.com")
         let repository = Repository(network: network)
         let factory = CoordinatorFactory(repository: repository)
-        let coordinator = factory.makeCharacters()
-        coordinator.start(on: window)
+        coordinator = factory.makeCharacters()
+        coordinator?.start(on: window)
     
         return true
     }

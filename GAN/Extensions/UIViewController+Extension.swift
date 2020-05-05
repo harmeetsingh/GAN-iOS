@@ -6,6 +6,8 @@
 //  Copyright © 2020 Harmeet Singh. All rights reserved.
 //
 
+import Bond
+import ReactiveKit
 import UIKit
 
 extension UIViewController {
@@ -24,5 +26,34 @@ extension UIViewController {
             fatalError(error)
         }
         return viewController
+    }
+    
+    func present(viewModel: AlertViewModelType?) {
+        guard let viewModel = viewModel else { return }
+
+         let alert = UIAlertController(title: viewModel.title,
+                                       message: viewModel.message,
+                                       preferredStyle: viewModel.style)
+
+         viewModel
+             .actions
+             .map { action in
+                 UIAlertAction(title: action.title, style: action.style) { _ in
+                     action.action?()
+                 }
+             }
+             .forEach(alert.addAction)
+
+         present(alert, animated: true, completion: nil)
+     }
+}
+
+extension ReactiveExtensions where Self.Base : UIViewController {
+
+    var alertViewModel: Bond<AlertViewModelType?> {
+
+        return bond { viewController, alertViewModel in
+            viewController.present(viewModel: alertViewModel)
+        }
     }
 }
