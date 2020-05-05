@@ -1,0 +1,10 @@
+{
+  "commitish" : "v3.17.1",
+  "iOS" : [
+    {
+      "name" : "ReactiveKit",
+      "hash" : "f442cf9cb3a3fd7d80f9a3673634ce08c941102b952d1d6c6e837d558ad163cd",
+      "swiftToolchainVersion" : "5.1 (swiftlang-1100.0.270.13 clang-1100.0.33.7)"
+    }
+  ]
+}
